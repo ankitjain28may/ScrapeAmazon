@@ -8,8 +8,8 @@ def get_soup(url,header):
     return BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
 
 
-query = input("Enter Product Name\n")# you can change the query for the product  here
-query= query.split()
+search = input("Enter Product Name\n")# you can change the query for the product  here
+query= search.split()
 query='+'.join(query)
 url="http://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+query+"&rh=i%3Aaps%2Ck%3A"+query
 print(url)
@@ -19,6 +19,7 @@ header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KH
 soup = get_soup(url,header)
 print(soup.title)
 
+fo = open(search+".txt", "w+")
 
 ActualProducts=[]# contains the link for the products
 reviews=[]
@@ -41,31 +42,28 @@ for i ,(link,name) in enumerate(ActualProducts):
 l = len(ActualProducts)
 print("there are total " ,l," links")
 
-review = int(input("Enter the product number to get reviews\n"))
-
-if review < l:
-    link,name = ActualProducts[review]
+for k in range(l):
+    link,name = ActualProducts[k]
+    fo.write(str(k) + " - " +name+"\n")
     print(link)
     so = get_soup(link,header)
-    print(so.title.string)
+    print(json.dumps(so.title.string))
     print("\n")
     i=1;
-    flag=0
     product = so.find_all(id="revMHFRL")
     if len(product) != 0:
-        flag=1
         for rev in product:
             data = rev.find_all("div", class_="a-section celwidget")
             for tag in data:
                 r = tag.find("div", class_="a-section")
                 try:
-                    print("Review %d - %s" % (i, r.text))
+                    # print("Review %d - %s" % (i, r.string))
+                    fo.write("Review "+str(i)+r.text+"\n")
                     i+=1
                 except Exception as e:
                     print(e)
     product = so.find_all(id="revMHRL")
     if len(product) != 0:
-        flag=1
         for rev in product:
             data = rev.find_all("div", class_="a-row a-spacing-small")
             for tag in data:
@@ -76,7 +74,3 @@ if review < l:
                     i+=1
                 except Exception as e:
                     print(e)
-    if flag != 1:
-        print("No Revies Found")
-else:
-    print("Invalid Input")
