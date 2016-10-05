@@ -7,8 +7,7 @@ def get_soup(url,header):
     return BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
 
 
-query = input("query image\n")# you can change the query for the image  here
-image_type="ActiOn"
+query = input("Enter Product Name\n")# you can change the query for the image  here
 query= query.split()
 query='+'.join(query)
 url="http://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+query+"&rh=i%3Aaps%2Ck%3A"+query
