@@ -14,7 +14,7 @@ query='+'.join(query)
 url="http://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+query+"&rh=i%3Aaps%2Ck%3A"+query
 print(url)
 
-header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
+header={'User-Agent':"Mozilla/6.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
 }
 soup = get_soup(url,header)
 print(soup.title)
@@ -71,8 +71,7 @@ if review < l:
             for tag in data:
                 r = tag.find("div", class_="a-section")
                 try:
-                    # print("Review %d - %s" % (i, r.string))
-                    fo.write("Review "+str(i)+r.text+"\n")
+                    print("Review %d - %s" % (i, r.text))
                     i+=1
                 except Exception as e:
                     print(e)
