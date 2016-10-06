@@ -76,6 +76,6 @@ if review < l:
                 except Exception as e:
                     print(e)
     if flag != 1:
-        print("No Revies Found")
+        print("No Reviews Found")
 else:
     print("Invalid Input")
