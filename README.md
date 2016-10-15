@@ -2,21 +2,21 @@
 >Scrape the Users Review from Amazon supports python3
 
 #Installation
-1- Install python 3.5 from `www.python.org`
+1- Install python 3.5 from [Python.org](https://www.python.org)
 
 2- `sudo apt-get install python3-pip` (For Ubuntu Users)
 
-3- `python setup.py`
+3- `python setup.py` or `python3 setup.py`
 
   This will install all these packages
 
-  * `pip install bs4`
+  * `pip3 install bs4`
 
-  * `pip install requests`
+  * `pip3 install requests`
 
-  * `pip install urllib`
+  * `pip3 install urllib`
 
-  * `pip install validators`
+  * `pip3 install validators`
 
 After the installation, open terminal at the root folder--
 
