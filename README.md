@@ -20,11 +20,15 @@
 
 After the installation, open terminal at the root folder--
 
-Run `python run.py` or `python3 run.py` to get individual reviews at the terminal screen.
+Run `python run.py` or `python3 run.py` to get individual reviews at the terminal screen or cmd.
 
 OR
 
 Run `python automatedScrape.py` or `python3 automatedScrape.py` to save all the reviews of all the items for the searched product in the file.
+
+OR
+
+Run `python unlimitedReviews.py` or `python3 unlimitedReviews.py` to fetch all the reviews according to page No. at the terminal screen or cmd.
 
 ##Some Useful Installation Tips
 
