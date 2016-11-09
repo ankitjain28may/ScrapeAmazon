@@ -9,7 +9,7 @@ installs = [
 print("Wait for the installations, Its in progress..!!!")
 for install in installs:
     query = install.split()
-    proc = subprocess.Popen(query, stdout=subprocess.PIPE, shell=True)
+    proc = subprocess.Popen(query, stdout=subprocess.PIPE)
     output, error = proc.communicate()
     if output!=None:
         print(output.decode('utf-8'))
