@@ -1,5 +1,5 @@
 # ScrapeAmazon
->Scrape the Users Review from Amazon supports python3
+>Scrape the Users Review from Amazon supports python 3.5
 
 #Installation
 1- Install python 3.5 from [Python.org](https://www.python.org)
@@ -10,13 +10,13 @@
 
   This will install all these packages
 
-  * `pip3 install bs4`
+  * `pip install bs4`
 
-  * `pip3 install requests`
+  * `pip install requests`
 
-  * `pip3 install urllib`
+  * `pip install urllib`
 
-  * `pip3 install validators`
+  * `pip install validators`
 
 After the installation, open terminal at the root folder--
 
@@ -47,3 +47,5 @@ After setting virtual environment install packages listed above and Enjoy.
 #License
 
 Copyright (c) 2016 Ankit Jain - Released under the Apache License
+
+P.S For more python scripts Go To -> [pythonResources](https://github.com/ankitjain28may/pythonResources)
