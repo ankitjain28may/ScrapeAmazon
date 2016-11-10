@@ -1,10 +1,10 @@
 import subprocess
 
 installs = [
-        "pip3 install bs4",
-        "pip3 install requests",
-        "pip3 install urllib",
-        "pip3 install validators"
+        "pip install bs4",
+        "pip install requests",
+        "pip install urllib",
+        "pip install validators"
     ]
 print("Wait for the installations, Its in progress..!!!")
 for install in installs:
